@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-EN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHEN HAOJUN- Marketing Phd </title>
+  <!-- 引入 Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入 Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <!-- Tailwind 配置 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF', // 学术蓝
+            secondary: '#0A84FF', // 辅助蓝
+            accent: '#FF9500', // 强调色
+            dark: '#1D2939', // 深色
+            light: '#F9FAFB', // 浅色
+          },
+          fontFamily: {
+            inter: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <!-- 自定义工具类 -->
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .transition-custom {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .hover-lift {
+        transform: translateY(0);
+        transition: transform 0.3s ease;
+      }
+      .hover-lift:hover {
+        transform: translateY(-5px);
+      }
+    }
+  </style>
+</head>
+<body class="bg-light text-dark antialiased">
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-white flex items-center space-x-2">
+        <span class="bg-primary rounded-lg p-1">
+          <i class="fa fa-graduation-cap"></i>
+        </span>
+        <span>CHEN HAOJUN</span>
+      </a>
+      
+      <!-- 桌面导航 -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="text-white hover:text-primary transition-colors">Home</a>
+        <a href="about.html" class="text-white hover:text-primary transition-colors">About me</a>
+        <a href="research.html" class="text-white hover:text-primary transition-colors">Research</a>
+        <a href="publications.html" class="text-white hover:text-primary transition-colors">Paper</a>
+        <a href="teaching.html" class="text-white hover:text-primary transition-colors">Teaching</a>
+        <a href="contact.html" class="text-white hover:text-primary transition-colors">Contact me</a>
+      </nav>
+      
+      <!-- 移动端菜单按钮 -->
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+        <i class="fa fa-bars text-2xl"></i>
+      </button>
+    </div>
+    
+    <!-- 移动端导航菜单 -->
+    <div id="mobile-menu" class="md:hidden bg-dark/95 backdrop-blur-md hidden">
+      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <a href="index.html" class="text-white hover:text-primary transition-colors py-2">Home</a>
+        <a href="about.html" class="text-white hover:text-primary transition-colors py-2">About me</a>
+        <a href="research.html" class="text-white hover:text-primary transition-colors py-2">Research</a>
+        <a href="publications.html" class="text-white hover:text-primary transition-colors py-2">Paper</a>
+        <a href="teaching.html" class="text-white hover:text-primary transition-colors py-2">Teaching</a>
+        <a href="contact.html" class="text-white hover:text-primary transition-colors py-2">Contact me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 英雄区域 -->
+  <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-secondary text-white overflow-hidden">
+    <div class="container mx-auto px-4 py-20 z-10">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight text-shadow mb-4">
+            CHEN HAOJUN<br>
+            <span class="text-xl font-normal text-white/80">Marketing</span>
+          </h1>
+          <p class="text-[clamp(1.2rem,2vw,1.5rem)] text-white/90 mb-8 max-w-lg">
+            用一段话介绍自己。
+          </p>
+          <div class="flex flex-wrap gap-4 mb-8">
+            <a href="about.html" class="px-6 py-3 bg-white text-primary hover:bg-white/90 rounded-lg shadow-lg transition-custom hover-lift">
+              Learn more
+            </a>
+            <a href="contact.html" class="px-6 py-3 bg-transparent border-2 border-white hover:bg-white/10 text-white rounded-lg shadow-lg transition-custom hover-lift">
+              Contact me
+            </a>
+          </div>
+          <div class="flex space-x-6 text-2xl">
+            <a href="#" class="text-white hover:text-white/80 transition-colors hover-lift" aria-label="Google Scholar">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="text-white hover:text-white/80 transition-colors hover-lift" aria-label="ResearchGate">
+              <i class="fa fa-flask"></i>
+            </a>
+            <a href="#" class="text-white hover:text-white/80 transition-colors hover-lift" aria-label="LinkedIn">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="#" class="text-white hover:text-white/80 transition-colors hover-lift" aria-label="GitHub">
+              <i class="fa fa-github"></i>
+            </a>
+            <a href="#" class="text-white hover:text-white/80 transition-colors hover-lift" aria-label="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="relative z-10 rounded-lg overflow-hidden shadow-2xl hover-lift">
+            <img src="https://picsum.photos/seed/professor/600/700" alt="HaojunChen照片" class="w-full h-auto">
+          </div>
+          <div class="absolute top-8 -right-8 w-64 h-64 bg-accent/20 rounded-full -z-10"></div>
+          <div class="absolute -bottom-8 -left-8 w-48 h-48 bg-white/10 rounded-full -z-10"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <a href="#news" class="text-white opacity-70 hover:opacity-100 transition-opacity">
+        <i class="fa fa-chevron-down text-2xl"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- EDUCATION-->
+  <section id="news" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">EDUCATION</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+      </div>
+      
+      <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+        <ul class="space-y-4">
+          <li class="flex items-start">
+            <div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mr-4">
+              2025.08
+            </div>
+            <div>
+              <p class="font-medium">The University of Hong Kong, Hong Kong——Ph.D. Candidate in Marketing</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mr-4">
+              2024
+            </div>
+            <div>
+              <p class="font-medium">University of British Columbia——Exchange student in Sauder School of Business</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mr-4">
+              2017
+            </div>
+            <div>
+              <p class="font-medium">The Chinese University of Hong Kong, Hong Kong——MSc in Information and Technology Management</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mr-4">
+              2016
+            </div>
+            <div>
+              <p class="font-medium">Xiamen University, Xiamen——Bachelors in Accounting and Economic</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 研究方向 -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">RESEARCH INTERESTS</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-md hover-lift">
+          <div class="text-primary text-4xl mb-6">
+            <i class="fa fa-language"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Theoretical</h3>
+          </p>
+          <ul class="text-gray-600 space-y-2">
+            <li><i class="fa fa-check-circle text-primary mr-2"></i> Gift-Giving</li>
+            <li><i class="fa fa-check-circle text-primary mr-2"></i> Behavioral Pricing</li>
+            <li><i class="fa fa-check-circle text-primary mr-2"></i> Choice Structure</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-md hover-lift">
+          <div class="text-primary text-4xl mb-6">
+            <i class="fa fa-eye"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Substantive</h3>
+          </p>
+          <ul class="text-gray-600 space-y-2">
+            <li><i class="fa fa-check-circle text-primary mr-2"></i> Digital Marketing</li>
+            <li><i class="fa fa-check-circle text-primary mr-2"></i> Prosocial Behavior</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-md hover-lift">
+          <div class="text-primary text-4xl mb-6">
+            <i class="fa fa-brain"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Methodological</h3>
+          <p class="text-gray-600 mb-4">
+          </p>
+          <ul class="text-gray-600 space-y-2">
+            <li><i class="fa fa-check-circle text-primary mr-2"></i> Lab, Online, and Field Experiments</li>
+            <li><i class="fa fa-check-circle text-primary mr-2"></i> Platform A/B Tests</li>
+            <li><i class="fa fa-check-circle text-primary mr-2"></i> Eye-Tracking</li>
+            <li><i class="fa fa-check-circle text-primary mr-2"></i> Analysis of Longitudinal and Secondary Data</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最近发表论文 -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">SELECT RESEARCH IN PROGRESS</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+      </div>
+      
+      <div class="space-y-8">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-lift">
+          <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Revising for invited resubmission at Journal of Marketing Research</span>
+            <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">最佳论文候选</span>
+          </div>
+          <h3 class="font-bold text-xl mb-2">Title Removed for Blind Review [Digital Marketing]</h3>
+          <p class="text-gray-600 mb-3">
+            Haojun Chen, Zhengyu Shi, Chu (Ivy) Dang, and Tak Huang
+          </p>
+          <p class="text-gray-700 mb-4">
+            本文提出了一种新型的多模态Transformer架构，能够有效融合文本、音频和视觉信息进行情感分析，在多个基准数据集上取得了state-of-the-art的结果。
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-file-pdf-o mr-1"></i> PDF
+            </a>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-code mr-1"></i> 代码
+            </a>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-database mr-1"></i> 数据集
+            </a>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-slideshare mr-1"></i> 幻灯片
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-lift">
+          <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Under review at International Journal of Research in Marketing</span>
+          </div>
+          <h3 class="font-bold text-xl mb-2">Title Removed for Blind Review [Gift-Giving]</h3>
+          <p class="text-gray-600 mb-3">
+            Haojun Chen, Marina Puzakova, Fine F. Leung, and Sara Kim
+          </p>
+          <p class="text-gray-700 mb-4">
+            我们提出了一种新型的对比学习框架，能够有效利用未标记的医学图像数据，显著提高了多种医学图像分析任务的性能，包括疾病检测和分割。
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-file-pdf-o mr-1"></i> PDF
+            </a>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-code mr-1"></i> 代码
+            </a>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-database mr-1"></i> 数据集
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-lift">
+          <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Under review at International Journal of Research in Marketing</span>
+          </div>
+          <h3 class="font-bold text-xl mb-2">[Gift-Giving]</h3>
+          <p class="text-gray-600 mb-3">
+            Haojun Chen, Chu (Ivy) Dang, and Sara Kim
+          </p>
+          <p class="text-gray-700 mb-4">
+            本文提出了一种新型的可解释人工智能框架，能够为医疗诊断提供透明的决策支持，同时保持高性能，在多个医疗数据集上验证了方法的有效性。
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-file-pdf-o mr-1"></i> PDF
+            </a>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-code mr-1"></i> 代码
+            </a>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-database mr-1"></i> 数据集
+            </a>
+          </div>
+        </div>
+      </div>
+
+         <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-lift">
+          <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Manuscript in preparation, targeting Journal of Marketing Research</span>
+          </div>
+          <h3 class="font-bold text-xl mb-2">[Sustainability]</h3>
+          <p class="text-gray-600 mb-3">
+            Jin Sun, Jiajia Zhang, Haojun Chen, Hongwei He, Sumin Kim,
+          </p>
+          <p class="text-gray-700 mb-4">
+            本文提出了一种新型的可解释人工智能框架，能够为医疗诊断提供透明的决策支持，同时保持高性能，在多个医疗数据集上验证了方法的有效性。
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-file-pdf-o mr-1"></i> PDF
+            </a>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-code mr-1"></i> 代码
+            </a>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-database mr-1"></i> 数据集
+            </a>
+          </div>
+        </div>
+      </div>
+
+       <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-lift">
+          <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Data Collection in Progress</span>
+          </div>
+          <h3 class="font-bold text-xl mb-2">[Sensory Marketing]</h3>
+          <p class="text-gray-600 mb-3">
+            Haojun Chen, Sara Kim, and Shaobo Li
+          </p>
+          <p class="text-gray-700 mb-4">
+            本文提出了一种新型的可解释人工智能框架，能够为医疗诊断提供透明的决策支持，同时保持高性能，在多个医疗数据集上验证了方法的有效性。
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-file-pdf-o mr-1"></i> PDF
+            </a>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-code mr-1"></i> 代码
+            </a>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-database mr-1"></i> 数据集
+            </a>
+          </div>
+        </div>
+      </div>
+
+       <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-lift">
+          <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Data Collection in Progress</span>
+          </div>
+          <h3 class="font-bold text-xl mb-2">[Tipping]</h3>
+          <p class="text-gray-600 mb-3">
+           Haojun Chen, Khyati Gupta, and Krishna Savani
+          </p>
+          <p class="text-gray-700 mb-4">
+            本文提出了一种新型的可解释人工智能框架，能够为医疗诊断提供透明的决策支持，同时保持高性能，在多个医疗数据集上验证了方法的有效性。
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-file-pdf-o mr-1"></i> PDF
+            </a>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-code mr-1"></i> 代码
+            </a>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              <i class="fa fa-database mr-1"></i> 数据集
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="publications.html" class="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg shadow-md transition-custom hover-lift inline-flex items-center">
+          View all papers <i class="fa fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TEACHING EXPERIENCE -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">TEACHING EXPERIENCE</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-lift">
+          <h3 class="font-bold text-xl mb-4">Teaching Assistant</h3>
+          <p class="text-gray-600 mb-4">
+            正文巴巴拉拉
+          </p>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">
+              <i class="fa fa-calendar mr-1"></i> 春季学期
+            </span>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              课程网站 <i class="fa fa-external-link ml-1"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-lift">
+          <h3 class="font-bold text-xl mb-4">机器学习 (研究生)</h3>
+          <p class="text-gray-600 mb-4">
+            本课程深入探讨机器学习的理论和算法，包括监督学习、无监督学习、深度学习和强化学习等高级主题。
+          </p>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">
+              <i class="fa fa-calendar mr-1"></i> 秋季学期
+            </span>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              课程网站 <i class="fa fa-external-link ml-1"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-lift">
+          <h3 class="font-bold text-xl mb-4">自然语言处理 (研究生)</h3>
+          <p class="text-gray-600 mb-4">
+            本课程聚焦于自然语言处理的理论和技术，包括词法分析、句法分析、语义理解、文本生成和对话系统等内容。
+          </p>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">
+              <i class="fa fa-calendar mr-1"></i> 春季学期
+            </span>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              课程网站 <i class="fa fa-external-link ml-1"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-lift">
+          <h3 class="font-bold text-xl mb-4">计算机视觉 (研究生)</h3>
+          <p class="text-gray-600 mb-4">
+            本课程涵盖计算机视觉的核心算法和应用，包括图像分类、目标检测、语义分割、实例分割和视频分析等。
+          </p>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">
+              <i class="fa fa-calendar mr-1"></i> 秋季学期
+            </span>
+            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+              课程网站 <i class="fa fa-external-link ml-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">Contact me</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div>
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-6">联系方式</h3>
+            
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="bg-primary/10 p-3 rounded-full text-primary mr-4">
+                  <i class="fa fa-map-marker"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg mb-1">地址</h4>
+                  <p class="text-gray-600">中国上海市浦东新区张江高科技园区博云路2号<br>计算机科学与技术学院</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-primary/10 p-3 rounded-full text-primary mr-4">
+                  <i class="fa fa-envelope"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg mb-1">Email</h4>
+                  <p class="text-gray-600">liming@example.com</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-primary/10 p-3 rounded-full text-primary mr-4">
+                  <i class="fa fa-phone"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg mb-1">Phone</h4>
+                  <p class="text-gray-600">+86 21 5555 6789</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-primary/10 p-3 rounded-full text-primary mr-4">
+                  <i class="fa fa-clock-o"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg mb-1">办公时间</h4>
+                  <p class="text-gray-600">周二和周四: 14:00 - 16:00<br>或预约</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-6">发送消息</h3>
+            <form>
+              <div class="mb-6">
+                <label for="contact-name" class="block text-gray-700 font-medium mb-2">姓名</label>
+                <input type="text" id="contact-name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-custom" placeholder="请输入您的姓名">
+              </div>
+              
+              <div class="mb-6">
+                <label for="contact-email" class="block text-gray-700 font-medium mb-2">邮箱</label>
+                <input type="email" id="contact-email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-custom" placeholder="请输入您的邮箱">
+              </div>
+              
+              <div class="mb-6">
+                <label for="contact-subject" class="block text-gray-700 font-medium mb-2">主题</label>
+                <select id="contact-subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-custom">
+                  <option value="">请选择消息主题</option>
+                  <option value="research">研究合作</option>
+                  <option value="student">研究生申请</option>
+                  <option value="undergrad">本科生指导</option>
+                  <option value="other">其他</option>
+                </select>
+              </div>
+              
+              <div class="mb-6">
+                <label for="contact-message" class="block text-gray-700 font-medium mb-2">消息</label>
+                <textarea id="contact-message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-custom" placeholder="请输入您的消息"></textarea>
+              </div>
+              
+              <button type="submit" class="w-full px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg shadow-md transition-custom hover-lift">
+                发送消息
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">张明</h3>
+          <p class="text-gray-400 mb-4">
+            计算机科学教授<br>
+            人工智能、机器学习和自然语言处理
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-flask"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-github"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">快速链接</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">主页</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">关于我</a></li>
+            <li><a href="research.html" class="text-gray-400 hover:text-white transition-colors">研究</a></li>
+            <li><a href="publications.html" class="text-gray-400 hover:text-white transition-colors">论文</a></li>
+            <li><a href="teaching.html" class="text-gray-400 hover:text-white transition-colors">教学</a></li>
+            <li><a href="service.html" class="text-gray-400 hover:text-white transition-colors">服务</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">联系</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">资源</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">研究组</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">学生机会</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">数据集</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">代码</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">幻灯片</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">订阅更新</h3>
+          <p class="text-gray-400 mb-4">
+            订阅我的电子邮件，获取最新的研究和活动更新。
+          </p>
+          <form class="flex">
+            <input type="email" placeholder="您的邮箱" class="px-4 py-2 rounded-l-lg w-full focus:outline-none text-dark">
+            <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-r-lg transition-colors">
+              订阅
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <p>&copy; 2025 张明. 保留所有权利.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // 导航栏滚动效果
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-dark/95', 'backdrop-blur-md', 'shadow-lg');
+        navbar.classList.remove('bg-transparent');
+      } else {
+        navbar.classList.remove('bg-dark/95', 'backdrop-blur-md', 'shadow-lg');
+        navbar.classList.add('bg-transparent');
+      }
+    });
+    
+    // 移动端菜单切换
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        // 关闭移动菜单（如果打开）
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>    
