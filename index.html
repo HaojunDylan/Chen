@@ -415,13 +415,13 @@ Rating: 4.70/5 (class size = 27)</span>
 
 	<!-- 移动端导航脚本 -->
 	<script>
-		// 导航栏功能
+		// 
 		(function () {
 			var $body = document.querySelector('body');
 			var $toggle = document.querySelector('.toggle');
 			var navLinks = document.querySelectorAll('#nav a');
 
-			// 设置当前激活的导航项
+			// 
 			function setActiveNav() {
 				var currentHash = window.location.hash || '#about';
 				navLinks.forEach(function (link) {
@@ -432,22 +432,22 @@ Rating: 4.70/5 (class size = 27)</span>
 				});
 			}
 
-			// 点击导航链接时设置高亮
+			// 
 			navLinks.forEach(function (link) {
 				link.addEventListener('click', function (e) {
-					// 移除所有active类
+					// 
 					navLinks.forEach(function (l) {
 						l.classList.remove('active');
 					});
-					// 添加active类到当前链接
+					// 
 					this.classList.add('active');
 
-					// 移动端关闭导航栏
+					// 
 					$body.classList.remove('header-visible');
 				});
 			});
 
-			// 滚动时更新高亮
+			// 
 			function updateActiveOnScroll() {
 				var sections = document.querySelectorAll('section[id]');
 				var scrollPos = window.scrollY + 100;
@@ -468,14 +468,14 @@ Rating: 4.70/5 (class size = 27)</span>
 				});
 			}
 
-			// 监听滚动事件
+			// 
 			window.addEventListener('scroll', updateActiveOnScroll);
 
-			// 页面加载时设置初始状态
+			// 
 			setActiveNav();
 			updateActiveOnScroll();
 
-			// 移动端导航切换
+			// 
 			if ($toggle) {
 				$toggle.addEventListener('click', function (e) {
 					e.preventDefault();
@@ -483,7 +483,7 @@ Rating: 4.70/5 (class size = 27)</span>
 				});
 			}
 
-			// 点击页面其他区域关闭导航栏
+			// 
 			document.addEventListener('click', function (e) {
 				if (!e.target.closest('#header') && !e.target.closest('.toggle') && $body.classList.contains('header-visible')) {
 					$body.classList.remove('header-visible');
